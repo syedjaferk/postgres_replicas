@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: postgres:13
+    container_name: my_postgres_database
+    restart: always
+    volumes:
+        - ./data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5431:5432"
+    environment:
+      - 'POSTGRES_PASSWORD=my_password'
+      - 'POSTGRES_DB=my_default_database'
